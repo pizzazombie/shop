@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>mail</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h2>Чтобы связаться с нами, воспользуйтесь формой ниже</h2>
+        <form action="mail_send.php" method="post" name="form">
+ 
+           <input size="34" name="name" type="text" placeholder="Ваше имя"/>
+          
+            <br>
+          
+            <!-- Поле ввода почты  -->
+          
+            <input size="34" name="email" type="text" placeholder="Ваша почта"/>
+          
+            <br>
+          
+            <!-- Поле ввода для темы сообщения -->
+          
+          <input size="34" name="header" type="text" placeholder="Тема"/>
+          
+            <br>
+       
+            <!-- Текстовое поле для самого сообщения -->
+          
+            Сообщение<br></a><textarea cols="34" name="message" rows="5" placeholder=>
+          
+            </textarea>
+          
+            <br>
+          
+            <!-- Кнопка с надписью «Отправить», которая запускает обработчик формы -->
+          
+            <input type="submit" value="Отправить" />
+          
+        <script src="" async defer></script>
+    </body>
+</html>
