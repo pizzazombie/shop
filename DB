@@ -1,0 +1,52 @@
+CREATE TABLE users (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    login VARCHAR(64) NOT NULL,
+    email VARCHAR(64) NOT NULL,
+    address VARCHAR(255),
+    firstName VARCHAR(32),
+    lastName VARCHAR(64),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    user_role VARCHAR(12) DEFAULT 'user'
+) COMMENT='Покупатели';
+
+CREATE TABLE products (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(128) COMMENT 'Название планеты',
+    description TEXT,
+    size INT UNSIGNED,
+    color VARCHAR(20),
+    price DECIMAL(11, 2) COMMENT 'Цена 11 символов, 2 после зпт',
+    path_to_image VARCHAR(255) COMMENT 'Сюда прописываем путь до картинки'
+) COMMENT='Товарные позиции';
+
+CREATE TABLE orders (
+    id INT UNSIGNED NOT NULL,
+    user_id INT UNSIGNED
+) COMMENT='Заказы';
+
+CREATE TABLE orders_products (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    order_id INT UNSIGNED,
+    product_id INT UNSIGNED,
+    totalAmount INT UNSIGNED DEFAULT 1
+) COMMENT='Состав заказа';
+
+CREATE TABLE storehouses_products (
+    id INT UNSIGNED NOT NULL,
+    storehouse_id INT UNSIGNED,
+    product_id INT UNSIGNED,
+    amount INT UNSIGNED COMMENT 'Кол-во на складе'
+) COMMENT='Запасы на складе';
+
+CREATE TABLE categories (
+    id INT UNSIGNED,
+    catalog_id INT UNSIGNED,
+    product_id INT UNSIGNED
+) COMMENT='Чтобы одному товару присвоить несколько категорий';
+
+CREATE TABLE catalogs (
+    id INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(120),
+    description TEXT
+) ;
