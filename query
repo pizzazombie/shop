@@ -1,7 +1,7 @@
 // ПОЭЛЕМЕНТНОЕ ИЗВЛЕЧЕНИЕ РЕЗУЛЬТАТОВ БД
-<?php // query.php
-require_once 'login.php';
-$conn = new mysqli ($hm, $un, $pw, $db );
+//<?php // query.php
+//require_once 'login.php';
+//$conn = new mysqli ($hm, $un, $pw, $db );
 if ($conn->connect_error) die($conn->connect_error);
 
 $query = "SELECT * FROM catalogs";
@@ -23,4 +23,4 @@ $result->data_seek($j);
 }
 $result->close();
 $conn->close();
-?>
+//?>

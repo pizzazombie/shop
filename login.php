@@ -1,5 +1,5 @@
 <?php
-    $hm = 'localhost';
+    $hn = "localhost";
     $db = 'rush';
     $un = 'rick';
     $pw = '!QWer12345';
